@@ -22,6 +22,7 @@
 	}
 	boolean development = Boolean.parseBoolean(props.getProperty("development", "false"));
 	String versionCookieJquery = props.getProperty("version.cookie.jquery", "");
+	String versionColorboxJquery = props.getProperty("version.colorbox.jquery", "");
 %>
 <%
 	String method = request.getMethod();
@@ -36,6 +37,7 @@
 </jsp:include>
 
 <script type="text/javascript" src="webjars/jquery-cookie/<%=versionCookieJquery%>/jquery.cookie.js"></script>
+<script type="text/javascript" src="webjars/jquery-colorbox/<%=versionColorboxJquery%>/jquery.colorbox<%=development ? "" : "-min"%>.js"></script>
 
 <script type="text/javascript" src="js/xslt/jquery.xslt.js"></script>
 <script type="text/javascript" src="js/xmlns/jquery.xmlns.js"></script>
@@ -47,7 +49,6 @@
 </jsp:include>
 <script type="text/javascript" src="js/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
 <script type="text/javascript" src="js/jgrowl/jquery.jgrowl_compressed.js"></script> <%-- http://plugins.jquery.com/project/jGrowl --%>
-<script type="text/javascript" src="js/colorbox/jquery.colorbox-min.js"></script>
 <script type="text/javascript" src="js/parseUri/parseUri.js"></script>
 <script type="text/javascript" src="js/parsexml/jquery.xmldom-1.0.min.js"></script>
 <script type="text/javascript" src="js/fileuploader/fileuploader.js"></script>
