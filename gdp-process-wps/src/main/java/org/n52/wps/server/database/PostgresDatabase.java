@@ -82,7 +82,6 @@ protected final Object storeResponseLock = new Object();
 
     private static Timer wipeTimer;
 	private final String DATABASE_NAME;
-	private static boolean initialized = false;
 	
     private static final String CREATE_RESULTS_TABLE_PSQL
             = "CREATE TABLE RESULTS ("
@@ -110,9 +109,6 @@ protected final Object storeResponseLock = new Object();
 			LOGGER.error("The database class could not be loaded.", ex);
 			throw new UnsupportedDatabaseException("The database class could not be loaded.", ex);
 		} 
-	if (!initialized) {
-		throw new IllegalStateException("The Postgres database could not be initialized.  Check logs for more information");
-	}
     }
 
     private void initializeBaseDirectory(final String baseDirectoryPath) throws IOException {
